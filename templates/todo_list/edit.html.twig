@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello World!{% endblock %}
+
+{% block body %}
+    Edit your todo
+    {{ form_start(form, {'action': path('edit', {id: todo.id}), 'method': 'POST'}) }}
+        {{ form_errors(form) }}
+        {{ form(form) }}
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello World!{% endblock %}
+
+{% block body %}
+    <ul class="list-group">
+        {% for todo in todos %}
+            <li class="list-group-item container">
+                <div class="row">
+                    <div class="col">
+                        {{ todo.name }}: {{ todo.description }}
+                    </div>
+                    <div class="col text-right">
+                        <a href="{{ path('edit', {id: todo.id}) }}"><i class="fa fa-edit fa-lg mr-2"></i></a>
+                        <a href="{{ path('delete', {id: todo.id}) }}"><i class="fa fa-trash fa-lg "></i></a>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+        <button type="button" class="list-group-item list-group-item-success" onclick="window.location='{{ path('new') }}'">Add Todo</button>
+    </ul>
+{% endblock %}

@@ -1,3 +1,20 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+  path:           /
+  controller:     App\Controller\TodoListController::index
+  methods:        GET|HEAD
+
+new:
+  path:           /new
+  controller:     App\Controller\TodoListController::new
+
+edit:
+  path:           /edit/{id}
+  controller:     App\Controller\TodoListController::edit
+
+delete:
+  path:           /delete/{id}
+  controller:     App\Controller\TodoListController::delete
+
+sendReminders:
+  path:           /sendReminders
+  controller:     App\Controller\TodoListController::sendReminders
